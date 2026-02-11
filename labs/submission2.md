@@ -172,7 +172,8 @@ Using:
 $ git log --oneline --graph --all
 ```
 
-The image of the graph: ![Git Graph](image.png)
+The image of the graph:
+![Git Graph](image.png)
 
 ### Reflection: how the graph aids understanding (1–2 sentences)
 
