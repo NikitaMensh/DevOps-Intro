@@ -1,0 +1,34 @@
+name: Manual trigger workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sysinfo:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: OS / kernel
+        run: |
+          uname -a
+          cat /etc/os-release || true
+
+      - name: CPU / memory / disk
+        run: |
+          lscpu
+          free -h
+          df -h
+
+      - name: GitHub runner context
+        run: |
+          echo "Runner name: $RUNNER_NAME"
+          echo "Runner OS:   $RUNNER_OS"
+          echo "Runner arch: $RUNNER_ARCH"
+          echo "Workspace:   $GITHUB_WORKSPACE"
+
+      - name: Tool versions
+        run: |
+          python --version || true
+          node --version || true
+          npm --version || true
+          git --version || true
